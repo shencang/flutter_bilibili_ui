@@ -26,6 +26,7 @@ class _HomeFragmentState extends State<HomeFragment> {
       theme: ThemeData(primaryColor: Color.fromARGB(255, 250, 150, 150)),
       home: Scaffold(
         appBar: AppBar(
+          elevation: 0.0,
           title: Row(
             children: <Widget>[
               ClipOval(
@@ -59,7 +60,8 @@ class _HomeFragmentState extends State<HomeFragment> {
                   Icons.cloud_download,
                   color: Colors.white,
                 ),
-              ),Padding(
+              ),
+              Padding(
                 padding: EdgeInsets.only(left: 12.0),
                 child: Icon(
                   Icons.chat,
@@ -69,6 +71,73 @@ class _HomeFragmentState extends State<HomeFragment> {
             ],
           ),
           centerTitle: true,
+        ),
+        body: new ListView(
+          children: <Widget>[
+            Container(
+              color: Colors.white,
+              padding: new EdgeInsets.only(top: 13.0),
+              alignment: Alignment.center,
+              height: 50.0,
+              width: MediaQueryData.fromWindow(window).size.width,
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: <Widget>[
+                  Column(
+                    children: <Widget>[
+                      Text("直播"),
+                      Container(
+                        height: 1,
+                        width: 30.0,
+                        color: Colors.pinkAccent,
+                      ),
+                    ],
+                  ),
+                  Column(
+                    children: <Widget>[
+                      Text("推荐"),
+                      Container(
+                        height: 1,
+                        width: 30.0,
+                        color: Colors.pinkAccent,
+                      ),
+                    ],
+                  ),
+                  Column(
+                    children: <Widget>[
+                      Text("追番"),
+                      Container(
+                        height: 1,
+                        width: 30.0,
+                        color: Colors.pinkAccent,
+                      ),
+                    ],
+                  ),
+                  Column(
+                    children: <Widget>[
+                      Text("国家宝藏"),
+                      Container(
+                        height: 1,
+                        width: 30.0,
+                        color: Colors.pinkAccent,
+                      ),
+                    ],
+                  ),
+                  Column(
+                    children: <Widget>[
+                      Text("故事王2"),
+                      Container(
+                        height: 1,
+                        width: 30.0,
+                        color: Colors.pinkAccent,
+                      ),
+                    ],
+                  )
+                ],
+              ),
+            )
+          ],
         ),
       ),
     );
