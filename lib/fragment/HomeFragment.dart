@@ -25,18 +25,32 @@ class _HomeFragmentState extends State<HomeFragment> {
   Widget build(BuildContext context) {
     // TODO: implement build
     return MaterialApp(
-      theme: ThemeData(primaryColor: Colors.pinkAccent),
+      theme: ThemeData(primaryColor: Color.fromARGB(0xff, 249, 102, 140)),
       home: Scaffold(
         appBar: AppBar(
           elevation: 0.0,
           title: Row(
             children: <Widget>[
-              ClipOval(
-                  child: Image.asset(
-                "images/drawable-xxhdpi-v4/music_portrait_placeholder.png",
-                width: MediaQueryData.fromWindow(window).padding.top,
-                height: MediaQueryData.fromWindow(window).padding.top,
-              )),
+              Stack(
+                alignment: Alignment(1.8, -1.7),
+                children: <Widget>[
+                  ClipOval(
+                      child: Image.asset(
+                    "images/drawable-xxhdpi-v4/music_portrait_placeholder.png",
+                    width: MediaQueryData.fromWindow(window).padding.top,
+                    height: MediaQueryData.fromWindow(window).padding.top,
+                  )),
+                  Container(
+//                    color: Colors.redAccent,
+                    width: 8,
+                    height: 8,
+                    decoration: BoxDecoration(
+                        color: Colors.red,
+                        shape: BoxShape.circle,
+                        border: Border.all(color: Colors.white, width: 0.5)),
+                  )
+                ],
+              ),
               Container(
                 margin: EdgeInsets.only(left: 15.0, right: 13.0),
                 padding: EdgeInsets.only(left: 4.0),
@@ -45,7 +59,8 @@ class _HomeFragmentState extends State<HomeFragment> {
                 height: 30.0,
                 child: Icon(
                   Icons.search,
-                  color: Colors.white,
+                  color: Colors.white30,
+                  size: MediaQueryData.fromWindow(window).padding.top * 4 / 5,
                 ),
                 decoration: BoxDecoration(
                     color: Colors.black12,
@@ -65,8 +80,10 @@ class _HomeFragmentState extends State<HomeFragment> {
               ),
               Padding(
                 padding: EdgeInsets.only(left: 12.0),
-                child: Icon(
-                  Icons.chat,
+                child: Image.asset(
+                  "images/drawable-xxhdpi-v4/ic_btn_player_danmaku_options_vertical_scroll_checked.png",
+                  width: MediaQueryData.fromWindow(window).padding.top,
+                  height: MediaQueryData.fromWindow(window).padding.top,
                   color: Colors.white,
                 ),
               ),
@@ -346,37 +363,76 @@ class _HomeFragmentState extends State<HomeFragment> {
             ),
             SizedBox(
               height: MediaQueryData.fromWindow(window).size.height,
-              child:GridView.builder(
+              child: GridView.builder(
                 physics: NeverScrollableScrollPhysics(),
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 2,childAspectRatio: 1.3),
+                    crossAxisCount: 2, childAspectRatio: 1.3),
                 itemBuilder: (context, index) {
                   return Padding(
-                    padding:EdgeInsets.only(left: 15,right: 15),
+                    padding: EdgeInsets.only(left: 15, right: 15),
                     child: Column(
-                      crossAxisAlignment:CrossAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: <Widget>[
                         Padding(
-                          padding: EdgeInsets.all(1.0),
-                          child:  ClipRRect(
-                            borderRadius: BorderRadius.all(Radius.circular(6.0)),
-                            child: Image.asset(
-                              "images/drawable-xxhdpi-v4/img_column_no_data_space.png",
-                              fit: BoxFit.cover,
-                              height: 80.0,
-                            ),
-                          ),
+                            padding: EdgeInsets.all(3.0),
+                            child: Stack(
+                              alignment: Alignment.bottomCenter,
+                              children: <Widget>[
+                                ClipRRect(
+                                  borderRadius:
+                                      BorderRadius.all(Radius.circular(6.0)),
+                                  child: Image.asset(
+                                    "images/drawable-nodpi-v4/banner_default_topic.webp",
+                                    fit: BoxFit.cover,
+                                    height: 90.0,
+                                  ),
+                                ),
+                                Container(
+                                  padding:
+                                      EdgeInsets.symmetric(horizontal: 10.0),
+                                  child: Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: <Widget>[
+                                      Text(
+                                        "村里可能刚通网",
+                                        textScaleFactor: 0.7,
+                                        style: TextStyle(color: Colors.white),
+                                      ),
+                                      Row(
+                                        children: <Widget>[
+                                          Icon(
+                                            Icons.perm_identity,
+                                            color: Colors.white,
+                                            size: 15,
+                                          ),
+                                          Text("10万人",
+                                              textScaleFactor: 0.7,
+                                              style: TextStyle(
+                                                  color: Colors.white))
+                                        ],
+                                      )
+                                    ],
+                                  ),
+                                )
+                              ],
+                            )),
+                        Text(
+                          "没有网络连接",
+                          textScaleFactor: 0.75,
                         ),
-                        Text("没有网络连接",
-                            textScaleFactor: 0.70,),
-                        Text("其他游戏",style: TextStyle(
-                            color: Colors.black54, fontWeight: FontWeight.bold),
+                        Text("其他游戏",
+                            style: TextStyle(
+                                color: Colors.black54,
+                                fontWeight: FontWeight.bold),
                             textScaleFactor: 0.7),
-                      ],),);
-
-                },itemCount: 12,) ,
+                      ],
+                    ),
+                  );
+                },
+                itemCount: 12,
+              ),
             )
-
           ],
         ),
       ),
