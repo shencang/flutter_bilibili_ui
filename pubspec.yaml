@@ -47,6 +47,19 @@ flutter:
   assets:
    - images/longnv5.jpeg
    - images/music_icon_subject.png
+   - images/drawable-xxhdpi-v4/music_portrait_placeholder.png
+   - images/drawable-xxhdpi-v4/img_tips_error_not_foud.png
+   - images/drawable-xxhdpi-v4/lbs_position_detail_bg.webp
+   - images/drawable-xxhdpi-v4/mall_ic_common_loading02.png
+   - images/drawable-xxhdpi-v4/live_room_new_medal_head.png
+   - images/drawable-xxhdpi-v4/live_ic_wallet_enough.png
+   - images/drawable-xxhdpi-v4/img_holder_pay_success.png
+   - images/drawable-xxhdpi-v4/img_tips_error_load_error.png
+   - images/drawable-xxhdpi-v4/img_tips_error_live.png
+   - images/drawable-xxhdpi-v4/img_holder_forbid_style1.png
+   - images/drawable-xxhdpi-v4/img_holder_error_style3.png
+   - images/drawable-xxhdpi-v4/img_holder_doubt.png
+   - images/drawable-xxhdpi-v4/img_column_no_data_space.png
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
 

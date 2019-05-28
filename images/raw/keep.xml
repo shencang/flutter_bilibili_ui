@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (c) 2015-2017 BiliBili Inc.
+  -->
+
+<resources xmlns:tools="http://schemas.android.com/tools"
+    tools:keep="@drawable/ic_lv*,@color/level_progressbar_lv*,@mipmap/ic_category_*,@id/radio_*,@string/diagonsis_downloaded_report_content_resolve_*" />
