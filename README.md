@@ -1,6 +1,8 @@
 # flutter_app_1
 
 A new Flutter application.
+个人学习flutter的目录。
+尚未公开
 
 ## Getting Started
 
