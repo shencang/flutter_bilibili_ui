@@ -14,11 +14,13 @@ class ListWidget extends StatefulWidget {
 }
 
 class _ListWidgetState extends State<ListWidget> {
-  bool isVisible = false;
+  bool isVisible = true;
 
   var _ScrollControllerNumber = ScrollController(initialScrollOffset: 100.0);
 
   double downOneY = 0.0;
+
+  bool isAppbar =true;
 
   @override
   void initState() {
@@ -32,7 +34,7 @@ class _ListWidgetState extends State<ListWidget> {
     return MaterialApp(
       theme: ThemeData(primaryColor: Color.fromARGB(0xff, 249, 102, 140)),
       home: Scaffold(
-          appBar: AppBar(
+          appBar:isAppbar? AppBar(
             elevation: 0.0,
             title: Row(
               children: <Widget>[
@@ -94,8 +96,8 @@ class _ListWidgetState extends State<ListWidget> {
                 ),
               ],
             ),
-            centerTitle: true,
-          ),
+            centerTitle: false,
+          ):null,
           //TODO 列表部件
           body: new Listener(
             onPointerUp: (downPointEvent) {
@@ -113,10 +115,22 @@ class _ListWidgetState extends State<ListWidget> {
             onPointerMove: (movePointEvent){
               print("moveX =${movePointEvent.position.dx}");
               print("moveY =${movePointEvent.position.dy}");
-              if(movePointEvent.position.dy-downOneY<0){
 
+              if(movePointEvent.position.dy-downOneY<0){
+                if(-(movePointEvent.position.dy-downOneY)>40){
+                  setState(() {
+                    isAppbar =false;
+                  });
+
+                }
                 print("向上滑");
               }else{
+                if((movePointEvent.position.dy-downOneY)>40){
+                  setState(() {
+                    isAppbar =true;
+                  });
+
+                }
                 print("向下滑");
               }
             },
