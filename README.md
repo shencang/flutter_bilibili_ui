@@ -1,4 +1,4 @@
-# flutter_app_1
+# flutterApp
 
 A new Flutter application.
 个人学习flutter的目录。
