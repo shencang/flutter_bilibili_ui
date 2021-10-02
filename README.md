@@ -2,7 +2,7 @@
 
 A new Flutter application.
 个人学习flutter的目录。
-尚未公开，无后台,仅作演示
+尚未公开，无后台,仅作演示.测试
 
 ## Getting Started
 
